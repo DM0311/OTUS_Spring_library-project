@@ -1,0 +1,920 @@
+{
+  "info": {
+    "_postman_id": "c56afc17-0f0c-4629-b9c2-ecb6327c58b2",
+    "name": "OTUS_library-service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14252522"
+  },
+  "item": [
+    {
+      "name": "Book",
+      "item": [
+        {
+          "name": "GetAllBooks",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/book",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "book"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetBookById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/book/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "book",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SearchBook",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/book/find?author=толстой",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "book",
+                "find"
+              ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": "война",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "author",
+                  "value": "толстой",
+                  "type": "text"
+                },
+                {
+                  "key": "year",
+                  "value": "1953",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UpdateBook",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Обновлённая книга\",\n  \"year\": \"2025\",\n  \"description\": \"Новое описание\",\n  \"totalCopies\": 10,\n  \"availableCopies\": 8,\n  \"authorIds\": [1, 3],\n  \"genreIds\": [2]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/book/3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "book",
+                "3"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "2",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteBook",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/book/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "book",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateBook",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3ODQ3MjU5MTYsImV4cCI6MTc4NDgxMjMxNn0.Id486I4pIH6DAwcFo4kcxT4db6W3Hivw4JOHwITOEa8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Новая книга\",\n  \"year\": \"2026\",\n  \"description\": \"Описание\",\n  \"totalCopies\": 5,\n  \"availableCopies\": 3,\n  \"authorIds\": [1, 2],\n  \"genreIds\": [1]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/book",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "book"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Genre",
+      "item": [
+        {
+          "name": "GetAllGenres",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/genre",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "genre"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateGenre",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n        \"name\": \"Комиксы\"\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/genre",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "genre"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteGenre",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/genre/9",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "genre",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Author",
+      "item": [
+        {
+          "name": "GetAllAuthors",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/author",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "author"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateAuthor",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n        \"fullName\": \"Алексей толстой\"\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/author",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "author"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteAuthor",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/author/9",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "author",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "GetAllUsers",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetUserById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteUser",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"newuser@mail.ru\",\n \"userName\": \"newuser\",\n \"fullName\": \"Новый Пользователь\",\n \"password\": \"password123\"\n }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "register"
+              ]
+            },
+            "description": "Регистрация нового пользователя. При повтороном выолнении код 409 с текстом ошибки"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "AuditLog",
+      "item": [
+        {
+          "name": "GetAllLogs",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3ODQ3MjU5MTYsImV4cCI6MTc4NDgxMjMxNn0.Id486I4pIH6DAwcFo4kcxT4db6W3Hivw4JOHwITOEa8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/auditLog",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin",
+                "auditLog"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Booking",
+      "item": [
+        {
+          "name": "CreateBooking",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": 1,\n    \"bookId\": 6,\n    \"daysToAdd\": 13\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/booking",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ProlongBooking",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/api/booking/1/prolong",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "booking",
+                "1",
+                "prolong"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ReturnBook",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/api/booking/1/return",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "booking",
+                "1",
+                "return"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CancelBooking",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/api/booking/2",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "booking",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "MyBookings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/api/booking/my",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "booking",
+                "my"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AllBookings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/api/booking/admin",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "booking",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "BookingById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/api/booking/admin/2",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "booking",
+                "admin",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "CreateComment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"userId\": 1,\n\"bookId\": 2,\n\"rating\": 5,\n\"commentText\": \"Отличная книга! Очень понравилась.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/comment",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UpdateComment",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"userId\": 2,\n\"bookId\": 1,\n\"rating\": 5,\n\"commentText\": \"Так себе чтиво.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/comment/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comment",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetByBook",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/comment/book/6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comment",
+                "book",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetByUser",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/comment/user/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comment",
+                "user",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteComment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/comment/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comment",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "item": [
+        {
+          "name": "GetAllByUser",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/notification/user/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notification",
+                "user",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetAllUnreadByUser",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/notification/user/1/unread",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notification",
+                "user",
+                "1",
+                "unread"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "MarkAsRead",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/notification/1/read",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notification",
+                "1",
+                "read"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "MarkAllAsRead",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/notification/user/1/read-all",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notification",
+                "user",
+                "1",
+                "read-all"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "GetToken",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('accessToken', response.accessToken);",
+                  "    pm.collectionVariables.set('refreshToken', response.refreshToken);",
+                  "    console.log('Токены сохранены');",
+                  "} else {",
+                  "    console.log('Ошибка авторизации');",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{authBaseUrl}}/login",
+              "host": [
+                "{{authBaseUrl}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{accessToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    },
+    {
+      "key": "authBaseUrl",
+      "value": ""
+    },
+    {
+      "key": "accessToken",
+      "value": ""
+    },
+    {
+      "key": "refreshToken",
+      "value": ""
+    }
+  ]
+}

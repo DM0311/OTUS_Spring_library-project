@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: library-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/library_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+
+logging:
+  level:
+    com.otus.library: DEBUG
+    org.springframework.security: INFO
+
+server:
+  port: 8080
+
