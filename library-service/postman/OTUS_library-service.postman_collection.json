@@ -53,7 +53,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/book/find?author=толстой",
+              "raw": "{{baseUrl}}/book/find?title=война&author=толстой",
               "host": [
                 "{{baseUrl}}"
               ],
@@ -65,17 +65,15 @@
                 {
                   "key": "title",
                   "value": "война",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "author",
-                  "value": "толстой",
                   "type": "text"
                 },
                 {
+                  "key": "author",
+                  "value": "толстой"
+                },
+                {
                   "key": "year",
-                  "value": "1953",
+                  "value": "1869",
                   "type": "text",
                   "disabled": true
                 }
@@ -140,16 +138,6 @@
         {
           "name": "CreateBook",
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": [
-                {
-                  "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3ODQ3MjU5MTYsImV4cCI6MTc4NDgxMjMxNn0.Id486I4pIH6DAwcFo4kcxT4db6W3Hivw4JOHwITOEa8",
-                  "type": "string"
-                }
-              ]
-            },
             "method": "POST",
             "header": [],
             "body": {
@@ -388,6 +376,136 @@
           "response": []
         },
         {
+          "name": "ChangePassword",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"currentPassword\": \"password1\",\n    \"newPassword\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/password",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ChangeProfile",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"admin-new@library.com\",\n    \"fullName\": \"Администратор (обновлён)\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/profile",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AssignNewRoles",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"roles\": [\"ADMIN\", \"USER\"]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/2/roles",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin",
+                "2",
+                "roles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "BlockUser",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/admin/2/block",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin",
+                "2",
+                "block"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UnblockUser",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/admin/2/unblock",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin",
+                "2",
+                "unblock"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "Register",
           "request": {
             "auth": {
@@ -429,16 +547,6 @@
             "disableBodyPruning": true
           },
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": [
-                {
-                  "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3ODQ3MjU5MTYsImV4cCI6MTc4NDgxMjMxNn0.Id486I4pIH6DAwcFo4kcxT4db6W3Hivw4JOHwITOEa8",
-                  "type": "string"
-                }
-              ]
-            },
             "method": "GET",
             "header": [],
             "body": {
