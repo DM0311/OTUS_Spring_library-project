@@ -19,13 +19,13 @@ VALUES ('Лев Толстой'),
        ('Рэй Брэдбери');
 
 INSERT INTO users (email, username, full_name, password, is_blocked, blocked_until, penalty_points, created_at)
-VALUES ('admin@library.com', 'admin', 'Администратор', '$2a$10$P9w.uLF4s7lUlfLyLtUk5Ok.C36pyZGiEq.2wS/vyhIs37ZCU.Q/K',
+VALUES ('admin@library.com', 'admin', 'Администратор', '$2a$10$/hXyNAcQGXiRkYp1ARIlqeHsp9ve79fh8vxQN9nACZbFdvILFMXzq',
         false, NULL, 0, CURRENT_TIMESTAMP),
-       ('ivanov@mail.ru', 'ivanov', 'Иван Иванов', '$2a$10$P9w.uLF4s7lUlfLyLtUk5Ok.C36pyZGiEq.2wS/vyhIs37ZCU.Q/K',
+       ('ivanov@mail.ru', 'ivanov', 'Иван Иванов', '$2a$10$/hXyNAcQGXiRkYp1ARIlqeHsp9ve79fh8vxQN9nACZbFdvILFMXzq',
         false, NULL, 0, CURRENT_TIMESTAMP),
-       ('petrov@mail.ru', 'petrov', 'Пётр Петров', '$2a$10$P9w.uLF4s7lUlfLyLtUk5Ok.C36pyZGiEq.2wS/vyhIs37ZCU.Q/K', true,
+       ('petrov@mail.ru', 'petrov', 'Пётр Петров', '$2a$10$/hXyNAcQGXiRkYp1ARIlqeHsp9ve79fh8vxQN9nACZbFdvILFMXzq', true,
         CURRENT_TIMESTAMP + INTERVAL '7' DAY, 5, CURRENT_TIMESTAMP),
-       ('sidorova@mail.ru', 'sidorova', 'Анна Сидорова', '$2a$10$P9w.uLF4s7lUlfLyLtUk5Ok.C36pyZGiEq.2wS/vyhIs37ZCU.Q/K',
+       ('sidorova@mail.ru', 'sidorova', 'Анна Сидорова', '$2a$10$/hXyNAcQGXiRkYp1ARIlqeHsp9ve79fh8vxQN9nACZbFdvILFMXzq',
         false, NULL, 2, CURRENT_TIMESTAMP);
 
 INSERT INTO user_roles (user_id, role_name)

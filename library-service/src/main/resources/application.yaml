@@ -27,7 +27,7 @@ jwt:
 logging:
   level:
     com.otus.library: DEBUG
-    org.springframework.security: INFO
+    org.springframework.security: DEBUG
 
 server:
   port: 8080

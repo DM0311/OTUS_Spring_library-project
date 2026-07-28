@@ -27,6 +27,11 @@ public class GlobalExceptionHandler {
         return prepareResponse(exception, HttpStatus.FORBIDDEN);
     }
 
+    @ExceptionHandler(PasswordMismatchException.class)
+    public ResponseEntity<ErrorResponseDto> handlePasswordException(PasswordMismatchException exception) {
+        return prepareResponse(exception, HttpStatus.FORBIDDEN);
+    }
+
     private ResponseEntity<ErrorResponseDto> prepareResponse(RuntimeException exception, HttpStatus status) {
         ErrorResponseDto error = new ErrorResponseDto(
                 status.value(),
