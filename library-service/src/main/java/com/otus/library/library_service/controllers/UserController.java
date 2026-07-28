@@ -97,7 +97,7 @@ public class UserController {
                 .actionType(ActionType.USER_UPDATE)
                 .entityType(User.class.getSimpleName())
                 .entityId(currentUser.getId())
-                .details("Обновление профиля - пользователь " + currentUser.getFullName() + " с id: " + currentUser.getId())
+                .details("Обновление профиля - пользователь  с id: " + currentUser.getId())
                 .endpoint(servletRequest.getRequestURI())
                 .httpMethod(servletRequest.getMethod())
                 .build());
@@ -125,11 +125,12 @@ public class UserController {
                 .build());
         return userRespDto;
     }
+
     @Operation(summary = "blockUser", description = "Block user")
     @PutMapping("api/admin/{userId}/block")
     public UserRespDto blockUser(@PathVariable Long userId,
                                  HttpServletRequest servletRequest,
-                                 Authentication authentication){
+                                 Authentication authentication) {
 
         User currentUser = (User) authentication.getPrincipal();
 
@@ -151,7 +152,7 @@ public class UserController {
     @PutMapping("api/admin/{userId}/unblock")
     public UserRespDto unblockUser(@PathVariable Long userId,
                                    HttpServletRequest servletRequest,
-                                   Authentication authentication){
+                                   Authentication authentication) {
 
         User currentUser = (User) authentication.getPrincipal();
 

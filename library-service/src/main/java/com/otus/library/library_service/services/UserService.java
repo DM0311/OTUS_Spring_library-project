@@ -2,7 +2,6 @@ package com.otus.library.library_service.services;
 
 import com.otus.library.library_service.dto.request.UserReqDto;
 import com.otus.library.library_service.dto.response.UserRespDto;
-import com.otus.library.library_service.model.entity.User;
 import com.otus.library.library_service.model.enums.Role;
 
 import java.util.List;
