@@ -1,0 +1,37 @@
+package com.otus.library.library_service.model.enums;
+
+public enum ActionType {
+
+    REGISTER,
+
+    USER_DELETE,
+    USER_UPDATE,
+    USER_BLOCK,
+    USER_UNBLOCK,
+    USER_ROLE_CHANGE,
+    USER_PASSWORD_CHANGE,
+
+    BOOK_CREATE,
+    BOOK_UPDATE,
+    BOOK_DELETE,
+
+    GENRE_CREATE,
+    GENRE_DELETE,
+
+    AUTHOR_CREATE,
+    AUTHOR_DELETE,
+
+    REVIEW_CREATE,
+    REVIEW_UPDATE,
+    REVIEW_DELETE,
+
+    BOOKING_CREATE,
+    BOOKING_EXTEND,
+    BOOKING_RETURN,
+    BOOKING_CANCEL,
+    BOOKING_OVERDUE,
+
+    PENALTY_APPLIED,
+    USER_AUTO_BLOCKED,
+    SCHEDULER_RUN
+}
